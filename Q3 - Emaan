@@ -1,0 +1,38 @@
+#######################
+# Question 3
+######################
+
+#-------------
+# Section 3.1
+#-------------
+# load the dataset
+ev_data <- read.csv("C:/Users/fsd6/Downloads/ev-data.csv", 
+                    row.names = 1)
+
+# part (a) plot different variable pairs
+plot(ev_data[, c("Battery", "Range")], 
+     col = "purple",
+     main = "Range against battery size",
+     xlab = "Battery size",
+     ylab = "Range")
+
+plot(ev_data[, c("TopSpeed", "Price")], 
+     col = "orange",
+     main = "Price against top speed",
+     xlab = "TopSpeed",
+     ylab = "Price")
+
+# car max range
+ev_data[which.max(ev_data$Range), ]
+
+# car with most effective WhperKm
+ev_data[which.min(ev_data$WhperKm), ]
+
+# fastest car
+ev_data[which.max(ev_data$TopSpeed), ]
+
+# car with fast acceleration 
+ev_data[which.min(ev_data$To100sec), ]
+
+# cheapest car
+ev_data[which.min(ev_data$Price), ]
